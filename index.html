@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Compra celulares en NovaCell. Explora modelos, ofertas y realiza tu pedido por WhatsApp.">
+  <meta name="theme-color" content="#536df0">
+  <title>NovaCell | Tu tienda de celulares</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="topbar">📦 Envíos disponibles · Atención personalizada por WhatsApp</div>
+  <header class="site-header">
+    <a class="logo" href="#inicio"><span class="logo-mark">N</span> Nova<span>Cell</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú">☰</button>
+    <nav id="mainNav">
+      <a href="#catalogo">Celulares</a><a href="#ofertas">Ofertas</a>
+      <a href="#mas-vendidos">Más vendidos</a><a href="#novedades">Novedades</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="header-actions">
+      <button class="cart-button" id="openCart" aria-label="Abrir carrito">🛒 <span id="cartCount">0</span></button>
+      <button class="admin-link" id="openLogin">Administrar</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">TECNOLOGÍA PARA TU DÍA A DÍA</span>
+        <h1>Tu próximo celular<br><span>está aquí.</span></h1>
+        <p>Descubre los últimos modelos, compara opciones y encuentra el equipo ideal para ti.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="#catalogo">Explorar celulares</a><a class="text-link" href="#ofertas">Ver promociones →</a></div>
+        <div class="hero-note"><span>✓</span> Atención cercana · Productos seleccionados</div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-glow"></div><div class="hero-phone phone-back"></div>
+        <div class="hero-phone phone-front"><div class="phone-screen"><span class="screen-time">9:41</span><div class="screen-orb"></div><span class="screen-caption">Make it yours.</span></div></div>
+        <div class="float-card"><span>✦</span><div><b>Gran variedad</b><small>Marcas que te encantan</small></div></div>
+      </div>
+    </section>
+
+    <section class="trust-row">
+      <div><b>📱</b><span>Variedad de modelos</span></div><div><b>💬</b><span>Asesoría personalizada</span></div>
+      <div><b>✨</b><span>Ofertas especiales</span></div><div><b>🤝</b><span>Atención confiable</span></div>
+    </section>
+
+    <section class="section" id="catalogo">
+      <div class="section-heading">
+        <div><span class="eyebrow">ENCUENTRA EL TUYO</span><h2>Explora nuestro catálogo</h2><p>Filtra por marca o modelo y agrega tus favoritos al carrito.</p></div>
+        <span class="result-count" id="resultCount">0 productos</span>
+      </div>
+      <div class="filters">
+        <label>Marca<select id="brandFilter"><option value="">Todas las marcas</option></select></label>
+        <label>Modelo<input id="modelFilter" type="search" placeholder="Buscar modelo..."></label>
+        <label>Ordenar por<select id="sortFilter"><option value="featured">Recomendados</option><option value="low">Precio: menor a mayor</option><option value="high">Precio: mayor a menor</option></select></label>
+        <button class="clear-btn" id="clearFilters">Limpiar filtros</button>
+      </div>
+      <div class="product-grid" id="catalogGrid"></div>
+      <p class="empty-state" id="emptyState" hidden>No encontramos productos con esos filtros.</p>
+    </section>
+
+    <section class="promo-banner" id="ofertas">
+      <div><span class="eyebrow light">PROMOCIONES POR TIEMPO LIMITADO</span><h2>¡Estrena celular<br>por menos!</h2><p>Consulta nuestras ofertas y pregunta por las promociones disponibles.</p><a class="btn btn-white" href="#catalogo">Ver celulares en oferta</a></div>
+      <div class="promo-sticker"><small>OFERTAS</small><strong>WOW!</strong><span>Precios especiales</span></div>
+    </section>
+
+    <section class="section tinted" id="mas-vendidos">
+      <div class="section-heading"><div><span class="eyebrow">LOS FAVORITOS</span><h2>Más vendidos</h2><p>Equipos que llaman la atención de nuestros clientes.</p></div></div>
+      <div class="product-grid compact-grid" id="bestGrid"></div>
+    </section>
+
+    <section class="section" id="novedades">
+      <div class="section-heading"><div><span class="eyebrow">RECIÉN LLEGADOS</span><h2>Novedades y destacados</h2><p>Conoce algunos de los modelos que acabamos de agregar.</p></div></div>
+      <div class="feature-grid">
+        <article class="feature-card feature-one"><span>NOVEDAD</span><h3>Diseño que destaca.</h3><p>Encuentra tecnología y estilo en un solo equipo.</p><a href="#catalogo">Ver catálogo →</a></article>
+        <article class="feature-card feature-two"><span>DESTACADO</span><h3>Elige tu próximo favorito.</h3><p>Compara modelos y consulta por disponibilidad.</p><a href="#catalogo">Descubrir modelos →</a></article>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacto">
+    <div class="footer-main">
+      <div class="footer-about"><a class="logo footer-logo" href="#inicio"><span class="logo-mark">N</span> Nova<span>Cell</span></a><p>Tu tienda de celulares. Te ayudamos a encontrar el equipo ideal para conectarte con lo que más importa.</p></div>
+      <div><h4>Contacto</h4><ul>
+        <li>📞 <a id="phoneLink" href="tel:+50588888888">+505 8888-8888</a></li>
+        <li>💬 <a id="footerWhatsapp" href="https://wa.me/50588888888" target="_blank" rel="noopener">WhatsApp: +505 8888-8888</a></li>
+        <li>📘 <a id="facebookLink" href="https://facebook.com/" target="_blank" rel="noopener">Facebook: NovaCell</a></li>
+      </ul></div>
+      <div><h4>Visítanos</h4><ul><li>📍 <span id="storeAddress">Escribe aquí tu dirección</span></li><li>🕒 Lun–Sáb, 8:00 a. m. – 6:00 p. m.</li><li>✉️ <a id="emailLink" href="mailto:contacto@novacell.com">contacto@novacell.com</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© <span id="year"></span> NovaCell. Todos los derechos reservados.</span><a href="#inicio">Volver arriba ↑</a></div>
+  </footer>
+
+  <!-- Carrito y confirmación del pedido -->
+  <div class="modal" id="cartModal" aria-hidden="true">
+    <div class="modal-card modal-wide">
+      <button class="modal-close" data-close="cartModal" aria-label="Cerrar">×</button>
+      <span class="eyebrow">TU COMPRA</span><h2>Carrito de compras</h2>
+      <div id="cartItems"></div>
+      <div class="cart-total"><span>Total</span><strong id="cartTotal">C$0</strong></div>
+      <form id="checkoutForm" class="checkout-form">
+        <h3>Datos para tu pedido</h3>
+        <div class="form-grid">
+          <label>Nombre completo<input name="customer" required maxlength="80" placeholder="Tu nombre"></label>
+          <label>Teléfono / WhatsApp<input name="phone" required type="tel" maxlength="25" placeholder="8888-8888"></label>
+          <label class="full">Dirección de entrega<input name="address" required maxlength="160" placeholder="Barrio, municipio y referencias"></label>
+          <label class="full">Método de pago<select name="payment" required><option value="Transferencia bancaria (coordinar por WhatsApp)">Transferencia bancaria (coordinar por WhatsApp)</option><option value="Pago contra entrega (consultar cobertura)">Pago contra entrega (consultar cobertura)</option><option value="Pago en tienda">Pago en tienda</option></select></label>
+          <label class="full">Notas (opcional)<textarea name="notes" rows="2" maxlength="250" placeholder="Color, horario u otra indicación"></textarea></label>
+        </div>
+        <p class="payment-note">El pedido se enviará a la tienda por WhatsApp para confirmar existencia, entrega y datos de pago. No ingreses datos de tarjetas aquí.</p>
+        <button class="btn btn-primary btn-full" type="submit">Enviar pedido por WhatsApp ↗</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Acceso administrador -->
+  <div class="modal" id="loginModal" aria-hidden="true">
+    <div class="modal-card login-card">
+      <button class="modal-close" data-close="loginModal" aria-label="Cerrar">×</button>
+      <span class="eyebrow">ÁREA PRIVADA</span><h2>Acceso administrador</h2>
+      <form id="loginForm" class="stack-form">
+        <label>Usuario<input name="username" autocomplete="username" required value="admin"></label>
+        <label>Contraseña<input name="password" type="password" autocomplete="current-password" required placeholder="Contraseña"></label>
+        <button class="btn btn-primary btn-full" type="submit">Iniciar sesión</button>
+        <p class="form-error" id="loginError" role="alert"></p>
+      </form>
+      <p class="small-muted">Acceso de demostración: admin / NovaCell2026! Cambia esta configuración antes de publicar.</p>
+    </div>
+  </div>
+
+  <!-- Panel de administración -->
+  <div class="modal" id="adminModal" aria-hidden="true">
+    <div class="modal-card admin-card">
+      <button class="modal-close" data-close="adminModal" aria-label="Cerrar">×</button>
+      <div class="admin-heading"><div><span class="eyebrow">GESTIÓN DE TIENDA</span><h2>Panel de administración</h2></div><button id="logoutBtn" class="clear-btn">Cerrar sesión</button></div>
+      <div class="admin-tabs">
+        <button class="tab-button active" data-tab="productsTab">Productos e inventario</button>
+        <button class="tab-button" data-tab="ordersTab">Pedidos recientes</button>
+        <button class="tab-button" data-tab="settingsTab">Datos de la tienda</button>
+      </div>
+      <section id="productsTab" class="tab-panel">
+        <h3 id="productFormTitle">Agregar producto</h3>
+        <form id="productForm" class="form-grid admin-form">
+          <input type="hidden" name="id">
+          <label>Marca<input name="brand" required maxlength="35" placeholder="Samsung"></label>
+          <label>Modelo<input name="model" required maxlength="55" placeholder="Galaxy A55"></label>
+          <label>Precio (C$)<input name="price" type="number" min="1" step="1" required></label>
+          <label>Precio anterior (opcional)<input name="oldPrice" type="number" min="0" step="1"></label>
+          <label>Existencias<input name="stock" type="number" min="0" step="1" required value="1"></label>
+          <label>URL de imagen<input name="image" type="url" placeholder="https://..."></label>
+          <label>Etiqueta<select name="tag"><option>DESTACADO</option><option>OFERTA</option><option>NUEVO</option><option>MÁS VENDIDO</option></select></label>
+          <label class="check-label"><input name="best" type="checkbox"> Mostrar en más vendidos</label>
+          <div class="form-actions full"><button class="btn btn-primary" type="submit">Guardar producto</button><button class="clear-btn" type="button" id="cancelEdit">Limpiar</button></div>
+        </form>
+        <h3 class="inventory-title">Inventario actual</h3>
+        <div class="table-wrap"><table><thead><tr><th>Producto</th><th>Precio</th><th>Stock</th><th>Acciones</th></tr></thead><tbody id="inventoryBody"></tbody></table></div>
+      </section>
+      <section id="ordersTab" class="tab-panel" hidden><h3>Pedidos guardados en este navegador</h3><div id="ordersList"></div></section>
+      <section id="settingsTab" class="tab-panel" hidden>
+        <h3>Información de contacto</h3>
+        <form id="settingsForm" class="form-grid admin-form">
+          <label>Nombre de la tienda<input name="storeName" required></label>
+          <label>Teléfono / WhatsApp (código país + número)<input name="whatsapp" required placeholder="50588888888"></label>
+          <label>Facebook URL<input name="facebook" type="url" placeholder="https://facebook.com/tu-tienda"></label>
+          <label>Correo electrónico<input name="email" type="email"></label>
+          <label class="full">Dirección<input name="address"></label>
+          <div class="form-actions full"><button class="btn btn-primary" type="submit">Guardar datos</button></div>
+        </form>
+      </section>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status"></div>
+  <script src="script.js"></script>
+</body>
+</html>
